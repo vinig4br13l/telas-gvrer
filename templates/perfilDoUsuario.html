@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../templates/static/css/bootstrap/bootstrap5.3.3.min.css">
+    <link rel="stylesheet" href="../templates/static/css/header.css">
+    <link rel="stylesheet" href="../templates/static/css/userprofile.css">
+    <link rel="stylesheet" href="../templates/static/css/perfilDoUsuario.css">
+    <link rel="stylesheet" href="../tesmplates/static/css/footer.css">
+    <title>Perfil do Usuário</title>
+    <style>
+       .foto-perfil {
+          width: 150px;       /* Largura da imagem */
+          height: 150px;      /* Altura da imagem */
+          border-radius: 50%; /* Deixa a imagem redonda */
+          object-fit: cover;  /* Garante que a imagem preencha o círculo sem distorcer */
+          border: 2px solid #ccc; /* (opcional) borda */
+      }
+        .perfil-inicio{
+          display: flex;
+          text-align: center;
+          flex-direction: column;
+
+        }
+        h3{
+          text-align: center;
+        }
+        .enderecos{
+          display: flex;
+          gap: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--Header Begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg bgColor">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Gvrer</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <!--Haeder End-->
+    <div class="container">
+      <!--Main Begin-->
+    <main>
+      <div class="perfil-inicio">
+        <h1 class="container titulo">Seu Perfil</h1>
+        <div class="logo p-3">
+          <img src="../templates/static/img/hagrid.jpg" alt="Logo" class="foto-perfil">
+          <h1 class="text-center">Rúbeo Hagrid</h1>
+        </div> 
+      </div>
+        <div class="container-fluid mt-3 mb-3 corpoFormulario">
+            <!--Form Begin-->
+            <form class="formulario">
+              <h3>Informações Pessoais</h3>
+                <!--Full Name Begin-->
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nome Completo:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Rúbeo">
+                </div>
+                <!--Full Name End-->
+                <!--Email Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">E-mail:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="hagrid@gmail.com">
+                </div>
+                <!--Email End-->
+                <!--User Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Usuário:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="h4gr1d">
+                  </div>
+                <!--User End-->
+                <!--Birthday Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Data de Nascimento:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="00/00/0000">
+                  </div>
+                <!--Birthday End-->
+                <!--Gender Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Gênero:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                  </div>
+                <!--Gender End-->
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Biografia:</label>
+                  <textarea type="text" class="form-control tamanho-input" id="exampleInputEmail1 descricao" name="descricao" aria-describedby="emailHelp" th:field="*{descricao}"></textarea>
+                </div>
+                <hr class="p-1">
+                <h3>Contato</h3>
+                <!--Phone Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Número de Telefone:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="(XX)XXXX-XXXX">
+                </div>
+                <!--Phone End-->
+                <!--Cellphone Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Número de Celular:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="(XX)XXXXX-XXXX">
+                </div>
+                <!--Cellphone End-->
+                <!--Linkedin Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Linkedin:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <!--Linkedin End-->
+                <hr class="p-1">
+                <h3>Endereço</h3>
+                <!--Country/State Begin-->
+                <div class="mb-3 pt-3 enderecos">
+                    <label for="exampleInputEmail1" class="form-label">País:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                    <label for="exampleInputEmail1" class="form-label">Estado:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <!--Country/State End-->
+                <!--City/Neighborhood Begin-->
+                <div class="mb-3 enderecos">
+                    <label for="exampleInputEmail1" class="form-label">Cidade:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                    <label for="exampleInputEmail1" class="form-label">Bairro:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <!--City/Neighborhood End-->
+                <!--Street/Number Begin-->
+                <div class="mb-3 enderecos">
+                    <label for="exampleInputEmail1" class="form-label">Rua:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                    <label for="exampleInputEmail1" class="form-label">Número:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <!--Street/Number End-->
+                <!--Other informations Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Complemento:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                    <label for="exampleInputEmail1" class="form-label">Referência:</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+                </div>
+                <!--Other informations End-->
+                <div class="botoes d-flex justify-content-evenly pt-3">
+                    <button type="submit" class="btn btn-outline-primary btnAtualizar mb-3">Atualizar Perfil</button>
+                    <button type="submit" class="btn btn-outline-dark btnSair mb-3">Sair da Conta</button>
+                    <button type="submit" class="btn btn-outline-danger btnDeletar mb-3">Deletar Conta</button>
+                </div>
+            </form>
+            <!--Form End-->
+        </div>
+    </main>
+    <!--Main End-->
+    </div>
+    
+    <!--Footer Begin-->
+    <footer>
+        <div class="text-center footerbgColor p-3">
+            <p>&copy;By Vini</p>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../templates/static/js/bootstrap/bootstrap5.3.3.bundle.min.js">
+
+    </script>
+</body>
+</html>

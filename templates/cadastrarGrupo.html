@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../templates/static/css/bootstrap/bootstrap5.3.3.min.css">
+    <link rel="stylesheet" href="../templates/static/css/header.css">
+    <link rel="stylesheet" href="../templates/static/css/cadastrarGrupo.css">
+    <link rel="stylesheet" href="../templates/static/css/footer.css">
+    <title>Cadastrar Grupo</title>
+</head>
+<body>
+    <!--Header Begin-->
+    <header>
+        <nav class="navbar navbar-expand-lg bgColor">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Gvrer</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <!--Haeder End-->
+    <!--Main Begin-->
+    <main>
+        <div class="logo">
+          <img src="../templates/static/img/logo.png" alt="Logo">
+        </div>
+        <h1 class="container text-center">Cadastre seu grupo</h1>
+        <div class="container">
+            <!--Form Begin-->
+            <form  th:action="@{/grupo/salvar}"
+                   th:object="${grupo}"
+                   method="post">
+                <!--Group name Begin-->
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Nome do grupo:</label>
+                  <input type="text" class="form-control" id="exampleInputEmail1 nomegrupo" name="nomegrupo" aria-describedby="emailHelp" placeholder="Ex: Viagem para Curitiba" th:field="*{nomegrupo}">
+                </div>
+                <!--Group name End-->
+                <!--Travel Costs by participant Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Custo total da viagem:</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1 custoViagem" name="custoViagem" aria-describedby="emailHelp" placeholder="****,**">
+                </div>
+                <!--Travel Costs by participant Begin-->
+                <!--Add participant Begin-->
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Adicionar participante:</label>
+                    <div class="input-group">
+                      <input class="form-control mr-sm-2" id="searchInput" type="text" placeholder="Digite o e-mail ou telefone" idaria-label="text" autocomplete="off">
+                    </div>
+                    <div class="mt-3 mb-3">
+                      <div class="suggestions" id="suggestionsBox"></div>
+                      </div>
+                      <h5>Usuários adicionados:</h5>
+                      <ul id="userList"></ul>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Crie uma descrição para o seu grupo de viagem:</label>
+                  <textarea type="text" class="form-control tamanho-input" id="exampleInputEmail1 descricao" name="descricao" aria-describedby="emailHelp" th:field="*{descricao}"></textarea>
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Li e concordo com os <a href="#" class="termosUso"><b>Termos de Uso</b></a></label>
+                </div>
+                <div class="botao-criar">
+                  <button type="submit" class="btn btn-outline-dark mb-3">Criar grupo
+                  </button>
+                </div>
+            </form>
+            <!--Form End-->
+        </div>
+    </main>
+    <!--Main End-->
+    <!--Footer Begin-->
+    <footer>
+        <div class="text-center footerbgColor p-3">
+            <p>&copy;By Vini</p>
+        </div>
+    </footer>
+    <!--Footer End-->
+    <script src="../templates/static/js/bootstrap/bootstrap5.3.3.bundle.min.js">
+
+    </script>
+    <script src="../templates/static/js/cadastrarGrupo.js">
+      
+    </script>
+</body>
+</html>
