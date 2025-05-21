@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br"  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Endereço</title>
+    <link rel="stylesheet" href="../templates/static/css/bootstrap/bootstrap5.3.3.min.css">
+    <link rel="stylesheet" href="../templates/static/css/header.css">
+    <link rel="stylesheet" href="../templates/static/css/footer.css">
+    <link rel="stylesheet" href="../templates/static/css/item.css">
+
+
+</head>
+
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg headerBgColor">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../home/home.html">Gvrer</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="d-flex justify-content-end">
+
+                <div class="form">
+                    <h1>Endereço</h1>
+                    <form 
+                    	class="row g-3 pt-3" 
+                        th:action="@{/endereco/salvar}"
+	                   th:object="${enderecodto}"
+	                   method="post"
+                    >
+                        <!-- País-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">País: </label>
+                            <input type="text" th:field="*{nomepais}" name="nomepais" class="form-control" id="exampleInputEmail1 nomepais" aria-describedby="emailHelp">
+                        </div>
+                        <!-- Sigla País-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Sigla do país: </label>
+                            <input type="text" th:field="*{siglapais}" name="siglapais" class="form-control" id="exampleInputEmail1 siglapais" aria-describedby="emailHelp">
+                        </div>
+                        <!-- Estado-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Estado: </label>
+                            <input type="text" th:field="*{nomeestado}" name="nomeestado" class="form-control" id="exampleInputEmail1 nomeestado" aria-describedby="emailHelp">
+                        </div>
+                        <!-- UF-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">UF: </label>
+                            <input type="text" th:field="*{uf}" name="uf" class="form-control" id="exampleInputEmail1 uf" aria-describedby="emailHelp">
+                        </div>
+                        <!-- Cidade-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Cidade: </label>
+                            <input type="text" th:field="*{nomecidade}" name="nomecidade" class="form-control" id="exampleInputEmail1 nomecidade" aria-describedby="emailHelp">
+                        </div>
+                        <!-- Bairro-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Bairro: </label>
+                            <input type="text" th:field="*{bairro}" name="bairro" class="form-control" id="exampleInputEmail1 bairro" aria-describedby="emailHelp">
+                        </div>
+                        <!-- CEP-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">CEP: </label>
+                            <input type="text" th:field="*{cep}" name="cep" class="form-control" id="exampleInputEmail1 cep" aria-describedby="emailHelp">
+                        </div>
+                        <!-- Logradouro-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Logradouro: </label>
+                            <input type="text" th:field="*{logradouro}" name="logradouro" class="form-control" id="exampleInputEmail1 logradouro" aria-describedby="emailHelp">
+                        </div>
+                        <!-- Número-->
+                         <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Número: </label>
+                            <input type="text" th:field="*{numero}" name="numero" class="form-control" id="exampleInputEmail1 numero" aria-describedby="emailHelp">
+                        </div>
+                         <!-- Complemento-->
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Complemento: </label>
+                            <input type="text" th:field="*{complemento}"  name="complemento" class="form-control" id="exampleInputEmail1 complemento" aria-describedby="emailHelp">
+
+                        </div>
+                        <!-- Referência-->
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Referência: </label>
+                            <input type="text" th:field="*{referencia}" name="referencia" class="form-control" id="exampleInputEmail1 referencia" aria-describedby="emailHelp">
+
+                        </div>
+                        <div class="botao-criar">
+		                  <button type="submit" class="btn btn-outline-dark mb-3">Cadastrar Endereço
+		                  </button>
+		                </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="text-center footerBgColor p-3">
+            <p class="p"> &copy; Gvrer | By Marlison</p>
+        </div>
+    </footer>
+    <script src="../templates/static/js/bootstrap/bootstrap5.3.3.bundle.min.js"></script>
+
+
+</body> 
+
+</html>
